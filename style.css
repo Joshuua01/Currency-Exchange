@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 2rem;
+    background-image: linear-gradient(to right bottom, #8b33c7, #8d34ca, #8e34cc, #9035cf, #9235d2, #9436d5, #9737d8, #9938db, #9c39df, #9f3be3, #a23ce8, #a53eec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+    width: 25%;
+    height: 50%;
+    padding: 2rem;
+}
+.logo {
+    padding-top: 3rem;
+    flex: 10;
+    font-size: 3rem;
+    align-self: center;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    flex: 10;
+}
+.currency-container{
+    flex: 20;
+}
+.exchange-btn-container{
+    flex: 10;
+}
+.exchange-result {
+    flex: 10;
+}
