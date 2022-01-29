@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/e0d1a43896.js" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
     
     <title>Currency Exchange</title>
@@ -15,19 +16,23 @@
 <body>
     <div class="container">
         <div class="logo">Currency Exchange</div>
-        <div class="amount">
-            <label for="amount">Amount:</label>
-            <input type="number" name="amount" id="amount" min="0">
+        <div class="amount-container">
+            <label class="amount-label" for="amount">Amount</label>
+            <input type="number" name="amount" id="amount" class="amount" min="0" autocomplete="false">
         </div>
         <div class="currency-container">
             <div class="currency-from-container">
-                <label for="currency-from">From:</label>
-                <select name="currency-from" id="currency-from"></select>
+                <select class="from-select" name="currency-from" id="currency-from" placeholder="from">
+                    <option value="" disabled selected hidden>From</option>
+                </select>
             </div>
-            <div class="btn">&leftarrowtail;&rightarrowtail;</div>
+            <div class="swap-button-div">
+                <button class="swap-button"><i class="fas fa-exchange-alt"></i></button>
+            </div>
             <div class="currency-to-container">
-                <label for="currency-to">To:</label>
-                <select name="currency-to" id="currency-to"></select>
+                <select class="to-select" name="currency-to" id="currency-to">
+                    <option value="" disabled selected hidden>To</option>
+                </select>
             </div>
         </div>
         <div class="exchange-btn-container"><button class="exchange-btn">Exchange</button></div>

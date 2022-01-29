@@ -20,10 +20,17 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+}
+
 body {
     width: 100vw;
     height: 100vh;
-    font-size: 2rem;
     background-image: linear-gradient(to right bottom, #8b33c7, #8d34ca, #8e34cc, #9035cf, #9235d2, #9436d5, #9737d8, #9938db, #9c39df, #9f3be3, #a23ce8, #a53eec);
     display: flex;
     justify-content: center;
@@ -33,31 +40,122 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
-    width: 25%;
-    height: 50%;
-    padding: 2rem;
+    width: 50%;
+    height: 70%;
+    padding: 3rem 5rem;
 }
+
 .logo {
     padding-top: 3rem;
-    flex: 10;
+    flex: 20;
     font-size: 3rem;
     align-self: center;
+    text-align: center;
 }
-.amount{
+
+.amount-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex: 10;
+    position: relative;
 }
-.currency-container{
+
+.amount {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 1.7rem 0 0.2rem 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.45);
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.amount-label{
+    position: absolute;
+    top: 1.8rem;
+    transition: 0.2s;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 1.5rem;
+}
+
+.focused {
+    position: absolute;
+    top: 0;
+}
+
+.currency-container {
     flex: 20;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
-.exchange-btn-container{
+
+.currency-from-container, .currency-to-container{
+    display: flex;
+    flex-direction: column;
+    flex: 25;
+}
+.swap-button-div{
+    flex: 50;
+    text-align: center;
+}
+
+.label {
+    font-size: 1.2rem;
+}
+
+select {
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    color: rgba(0, 0, 0, 0.65); 
+    outline: none;
+}
+
+.swap-button{
+    background: #9235d2;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 30px;
+}
+.swap-button:hover {
+    background: white ;
+    color: #9235d2;
+}
+
+.exchange-btn-container {
     flex: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.exchange-btn{
+    background: linear-gradient(to right bottom, #8b33c7, #8d34ca, #8e34cc, #9035cf, #9235d2, #9436d5, #9737d8, #9938db, #9c39df, #9f3be3, #a23ce8, #a53eec);
+    border: none;
+    color: white;
+    padding: 1.5rem 6rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
 .exchange-result {
-    flex: 10;
+    flex: 5;
+    padding: 3rem 0 0 0;
+    font-size: 1.5rem;
 }
